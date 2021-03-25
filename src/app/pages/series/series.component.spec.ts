@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SeriesComponent } from './series.component';
 
 describe('SeriesComponent', () => {
-  let component: SeriesComponent;
   let fixture: ComponentFixture<SeriesComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SeriesComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [SeriesComponent],
+      })
+        .compileComponents()
+        .then(() => {
+          fixture = TestBed.createComponent(SeriesComponent);
+        });
     })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SeriesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  );
 
   it('should create', () => {
+    const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
 });

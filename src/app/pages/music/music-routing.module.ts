@@ -4,9 +4,8 @@ import { MusicComponent } from './music.component';
 
 const routes: Routes = [{ path: '', component: MusicComponent }];
 
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MusicRoutingModule { }
+export class MusicRoutingModule {}

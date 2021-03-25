@@ -6,15 +6,10 @@
     "baseUrl": "./",
     "paths": {
       "@app/*": ["app/*"],
-      "@pages/*": ["app/pages/*"],
+      "@pages/*": ["app/pages/*"]
     },
     "types": []
   },
-  "files": [
-    "main.ts",
-    "polyfills.ts"
-  ],
-  "include": [
-    "**/*.d.ts"
-  ]
+  "files": ["main.ts", "polyfills.ts"],
+  "include": ["**/*.d.ts"]
 }

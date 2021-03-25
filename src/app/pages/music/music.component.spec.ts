@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MusicComponent } from './music.component';
 
 describe('MusicComponent', () => {
-  let component: MusicComponent;
   let fixture: ComponentFixture<MusicComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MusicComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [MusicComponent],
+      })
+        .compileComponents()
+        .then(() => {
+          fixture = TestBed.createComponent(MusicComponent);
+        });
     })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MusicComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  );
 
   it('should create', () => {
+    const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
 });

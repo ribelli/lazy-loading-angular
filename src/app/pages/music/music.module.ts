@@ -4,12 +4,8 @@ import { CommonModule } from '@angular/common';
 import { MusicRoutingModule } from './music-routing.module';
 import { MusicComponent } from './music.component';
 
-
 @NgModule({
   declarations: [MusicComponent],
-  imports: [
-    CommonModule,
-    MusicRoutingModule
-  ]
+  imports: [CommonModule, MusicRoutingModule],
 })
-export class MusicModule { }
+export class MusicModule {}
