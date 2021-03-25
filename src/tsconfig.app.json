@@ -12,9 +12,9 @@
   },
   "files": [
     "main.ts",
-    "src/polyfills.ts"
+    "polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "**/*.d.ts"
   ]
 }
