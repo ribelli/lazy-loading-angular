@@ -1,33 +1,14 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from '@pages/home/home.component';
-import { MoviesComponent } from '@pages/movies/movies.component';
-import { SeriesComponent } from '@pages/series/series.component';
-import { MusicComponent } from '@pages/music/music.component';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'movies',
-    component: MoviesComponent,
-  },
-  {
-    path: 'series',
-    component: SeriesComponent,
-  },
-  {
-    path: 'music',
-    component: MusicComponent,
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+  { path: 'home', loadChildren: () => import('@pages/home/home.module').then(m => m.HomeModule) },
+  { path: 'music', loadChildren: () => import('@pages/music/music.module').then(m => m.MusicModule) },
+  { path: 'series', loadChildren: () => import('@pages/series/series.module').then(m => m.SeriesModule) },
+  { path: 'movies', loadChildren: () => import('@pages/movies/movies.module').then(m => m.MoviesModule) },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
